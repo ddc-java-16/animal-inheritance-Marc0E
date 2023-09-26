@@ -30,7 +30,17 @@ public class Main {
     for(Canis c : roster){
       c.hunt();
       c.hunt("snapping turtle");
-      c.describe();
+      //((Dog) c).perform(); //Cast Dog so we can invoke the method but Dog is between () because the "." has a higher priority.
+      //I didn't work bc "c" at some point is Wolf and not Dog.
+      if(c instanceof Dog d){
+        Dog.describe();
+        d.perform();// same as below
+        //((Dog) c).perform();  Moved here, so it always work bc c is Dog here.
+      }else if(c instanceof Wolf){
+        Wolf.describe();
+      }else {
+       Canis.describe();
+      }
     }
   }
 

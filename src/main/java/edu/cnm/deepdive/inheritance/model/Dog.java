@@ -16,4 +16,8 @@ public class Dog extends Wolf {
   public static void describe() {
     System.out.println("I am an instance of the Dog class");
   }
+
+  public void perform(){
+    System.out.println("This is my trick! I'm the best dog");
+  }
 }
